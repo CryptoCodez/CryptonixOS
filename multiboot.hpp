@@ -3,10 +3,10 @@
 
 #include "types.hpp"
 
-#define MULTIBOOT_MAGIC 0x2badb002
+enum { multiboot_magic =  0x2badb002 };
 
 struct multiboot_header {
-  const uint32_t magic { 0x2badb002 };
+  const uint32_t magic { multiboot_magic };
   uint32_t flags;
   uint32_t checksum { -( magic + flags )};
   uint32_t header_addr;

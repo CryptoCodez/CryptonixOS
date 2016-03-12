@@ -6,6 +6,7 @@
 using uint8_t = unsigned char;
 using uint16_t = unsigned short;
 using uint32_t = unsigned int;
+using uint64_t = unsigned long long;
 
 using cchar_t = const char;
 using cshort_t = const short;

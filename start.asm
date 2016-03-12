@@ -1,10 +1,16 @@
-global loader
 extern kernel_main
 extern init_ctors
+global start
+global gdt_flush
+;mboot:
+  PAGE_ALIGN equ 1<<0
+  MEMORY_INFO equ 1<<1
+;  AOUT_KLUDGE equ 1<<16
+  MAGIC equ 0x1badb002
+  FLAGS equ PAGE_ALIGN | MEMORY_INFO
+  CHECKSUM equ -(MAGIC + FLAGS)
+;  EXTERN code, end
 
-FLAGS equ 0
-MAGIC equ 0x1badb002
-CHECKSUM equ -(MAGIC + FLAGS)
 section .text
 align 4
 multibootheader:
@@ -12,17 +18,24 @@ multibootheader:
   dd FLAGS
   dd CHECKSUM
 
-loader:
+;aoutkludge
+;  dd mboot
+;  dd code
+;  dd end
+;  dd start
+
+
+start:
   mov esp, 0x200000
   push eax
   push ebx
   call init_ctors
   call kernel_main
 
-global gdt_flush
-extern gp
+stublet:
+  jmp $
+
 gdt_flush:
-  lgdt [gp]
   mov ax, 0x10
   mov ds, ax
   mov es, ax 

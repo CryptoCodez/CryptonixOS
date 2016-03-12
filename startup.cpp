@@ -1,8 +1,6 @@
 #include "types.hpp"
 
-extern "C" void __cxa_pure_virtual() {
-
-}
+extern "C" void __cxa_pure_virtual(); // {}
 
 typedef void( *constructor )();
 
