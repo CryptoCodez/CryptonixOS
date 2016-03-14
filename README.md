@@ -2,23 +2,11 @@
 C++ Operating system
 
 #Usage
-to compile:
+to compile use "make"
 
-  make
+to start use "make the_boot" or with debugger "make the_debug"
 
-to start:
-
-  make the_boot
-
-to start and debug:
-
-  make the_debug
-
-to clean:
-
-  make clean            # objecct files
-
-  make complete_clean   # including kernel
+to clean use "make clean" ( only object files ) or "make complete_clean" ( including kernel )
 _____________________
 Requirements:
 
