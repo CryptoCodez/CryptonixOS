@@ -14,7 +14,7 @@ make the_debug
 to clean:
 make clean            # objecct files
 make complete_clean   # including kernel
-
+_____________________
 Requirements:
 x86 cpu, multiboot-loader ( like grub )
 
