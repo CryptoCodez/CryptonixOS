@@ -30,6 +30,6 @@ video& video::operator <<( const color_t& color ) {
 void video::put( char c ) {
   if( m_pos >= ( 80 * 25 ))
     clear();
-  m_videomem[ m_off + m_pos ] = (( uint16_t ) m_color << 8) | c;
+  m_videomem[ m_off * 80 + m_pos ] = (( uint16_t ) m_color << 8) | c;
   m_pos++;
 }

@@ -39,6 +39,7 @@ public:
   video& operator <<( const char* s );
   video& operator <<( const color_t& color );
   void put( char c );
+  void endl() { m_pos = 0; m_off++; }
 
 private:
   uint16_t* m_videomem;

@@ -31,4 +31,13 @@ kernel: $(OBJS)
 clean:
 	rm $(OBJS)
 
-.PHONY: clean
+complete_clean:
+	rm $(OBJS) kernel
+
+the_boot:
+	bash -c ./boot.sh
+
+the_debug:
+	bash -c ./boot_debug.sh
+
+.PHONY: clean the_boot the_debug complete_clean

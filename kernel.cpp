@@ -10,8 +10,10 @@ void kernel_main( const multiboot& /*multiboot_structure*/, uint32_t mboot_magic
       << "Error: No Multiboot Bootloader Found ( Err_NMBF )";
     return;
   }
-  screen << color_t( color::white, color::black ) << "Welcome OSDeveloper";
-  
+  screen << color_t( color::white, color::black );
+  screen.clear();
+  screen << "Welcome OSDeveloper";
+  screen.endl();  
   gdt::init_gdt();
   screen << "gdt works";
   return;
