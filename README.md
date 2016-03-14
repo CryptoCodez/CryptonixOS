@@ -3,36 +3,44 @@ C++ Operating system
 
 #Usage
 to compile:
-make
+
+  make
 
 to start:
-make the_boot
+
+  make the_boot
 
 to start and debug:
-make the_debug
+
+  make the_debug
 
 to clean:
-make clean            # objecct files
-make complete_clean   # including kernel
+
+  make clean            # objecct files
+
+  make complete_clean   # including kernel
 _____________________
 Requirements:
+
 x86 cpu, multiboot-loader ( like grub )
 
 Dev Requirements:
-qemu-system-i386
-gdb
-make
-ld
-nasm
-gcc/ g++
-uxterm
+
+qemu-system-i386,
+gdb,
+make,
+ld,
+nasm,
+gcc/ g++,
+uxterm,
 vim
 
 
 _____________________
-18 years old
+About Me
 
-OS: Arch Linux
+18 years old
+My OS: Arch Linux
 
 Programming Language: 
   It depends on the problem ( sooo many... )
