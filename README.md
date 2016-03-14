@@ -30,6 +30,8 @@ vim
 
 
 _____________________
+18 years old
+
 OS: Arch Linux
 
 Programming Language: 
