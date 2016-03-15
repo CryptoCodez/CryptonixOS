@@ -1,3 +1,6 @@
+// Coyright (c) Marc Puttkammer
+// 
+
 #ifndef _TYPES_HPP_
 #define _TYPES_HPP_
 

@@ -1,3 +1,6 @@
+// Coyright (c) Marc Puttkammer
+// 
+
 #include "video.hpp"
 #include "multiboot.hpp"
 #include "gdt.hpp"

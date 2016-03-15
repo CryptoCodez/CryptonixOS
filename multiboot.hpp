@@ -1,3 +1,6 @@
+// Coyright (c) Marc Puttkammer
+// 
+
 #ifndef _MULTIBOOT_HPP_
 #define _MULTIBOOT_HPP_
 

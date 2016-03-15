@@ -1,3 +1,6 @@
+// Coyright (c) Marc Puttkammer
+// 
+
 #include "types.hpp"
 
 extern "C" void __cxa_pure_virtual(); // {}

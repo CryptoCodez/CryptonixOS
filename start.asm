@@ -1,3 +1,6 @@
+; Coyright (c) Marc Puttkammer
+; 
+
 extern kernel_main
 extern init_ctors
 global start

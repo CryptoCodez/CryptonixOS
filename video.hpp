@@ -1,3 +1,6 @@
+// Coyright (c) Marc Puttkammer
+// 
+
 #ifndef _VIDEO_HPP_
 #define _VIDEO_HPP_
 

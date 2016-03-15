@@ -1,3 +1,6 @@
+// Coyright (c) Marc Puttkammer
+// 
+
 #include "video.hpp"
 
 video screen;

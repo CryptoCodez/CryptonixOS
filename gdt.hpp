@@ -1,3 +1,5 @@
+// Coyright (c) Marc Puttkammer
+// 
 #ifndef _GDT_HPP_
 #define _GDT_HPP_
 
