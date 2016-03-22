@@ -53,7 +53,7 @@ void init_gdt() {
     gdt_flags::dataseg | gdt_flags::f_4k_gran | gdt_flags::present | 
     gdt_flags::ring_3 );
 
-  //asm volatile("lgdt %0" : : "m" (gp));
+  asm volatile("lgdt %0" : : "m" (gp));
   gdt_flush();
 }
 
