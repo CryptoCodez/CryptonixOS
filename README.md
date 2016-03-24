@@ -21,20 +21,3 @@
 * gcc/ g++,
 * uxterm ( or edit the boot scripts )
 * vim ( recommended ;) )
-
-
-_____________________
-##About Me
-
-18 years old
-
-My OS: Arch Linux
-
-###Programming Language: 
-  It depends on the problem ( sooo many... )
-  --My heart compiles C++
-
-I use vim as my texteditor/ IDE including:
-  the GCC ( gnu compilers ), 
-  gdb, qemu, make, bash
-
