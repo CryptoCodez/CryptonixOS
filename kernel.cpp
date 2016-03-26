@@ -1,10 +1,10 @@
 // Coyright (c) Marc Puttkammer
 // 
 
-#include "memory.hpp"
-#include "video.hpp"
 #include "multiboot.hpp"
 #include "gdt.hpp"
+#include "memory.hpp"
+#include "video.hpp"
 
 extern "C" void kernel_main( const multiboot& multiboot_structure, typ::uint32_t mboot_magic );
 
@@ -19,7 +19,6 @@ void kernel_main( const multiboot& /*multiboot_structure*/, typ::uint32_t mboot_
   screen << "Welcome OSDeveloper";
   screen.endl();  
   gdt::init_gdt();
-  screen << "gdt works " << sizeof( typ::uint32_t ) << " " << sizeof( typ::uint8_t );
   return;
 }
 

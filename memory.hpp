@@ -20,13 +20,13 @@ public:
 
   // operator overloading
   //
-  iterator& operator++() { ++pos; return *this; }
+  iterator& operator++() { ++pos_; return *this; }
   iterator operator++( int ) { 
     iterator tmp( *this ); operator++(); return tmp;
   }
   bool operator==( const iterator& rval ) { return pos_==rval.pos_; }
   bool operator!=( const iterator& rval ) { return pos_!=rval.pos_; }
-  int& operator*() { return *pos_ }
+  int& operator*() { return *pos_; }
 
 private:
   Iterator* begin_;

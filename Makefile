@@ -10,9 +10,9 @@ CXX = g++
 LD = ld
 
 ASFLAGS = -f elf
-CFLAGS = -m32 -fno-use-cxa-atexit -nostdlib -fno-builtin -fno-rtti -fno-exceptions -fno-leading-underscore -Wall -Wextra -pedantic-errors -ggdb -fno-stack-protector -nostdinc -std=c11
-CXXFLAGS = -m32 -fno-use-cxa-atexit -nostdlib -fno-builtin -fno-rtti -fno-exceptions -fno-leading-underscore -Wall -Wextra -pedantic-errors -ggdb -fno-stack-protector -nostdinc -std=c++11
-LDFLAGS = -melf_i386 -Tkernel.ld -shared -nostdlib -ffreestanding -lgcc
+CFLAGS = -m32 -fno-use-cxa-atexit -nostdlib -fno-builtin -fno-rtti -fno-exceptions -fno-leading-underscore -Wall -Wextra -pedantic-errors -ggdb -fno-stack-protector -nostdinc -std=c11 -lgcc
+CXXFLAGS = -m32 -fno-use-cxa-atexit -nostdlib -fno-builtin -fno-rtti -fno-exceptions -fno-leading-underscore -Wall -Wextra -pedantic-errors -ggdb -fno-stack-protector -nostdinc -std=c++11 -lgcc
+LDFLAGS = -melf_i386 -Tkernel.ld
 kernel: $(OBJS)
 	$(LD) $(LDFLAGS) -o $@ $^
 

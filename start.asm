@@ -1,10 +1,6 @@
 ; Coyright (c) Marc Puttkammer
 ; 
 
-extern kernel_main
-extern init_ctors
-global start
-global gdt_flush
 ;mboot:
   PAGE_ALIGN equ 1<<0
   MEMORY_INFO equ 1<<1
@@ -13,6 +9,12 @@ global gdt_flush
   FLAGS equ PAGE_ALIGN | MEMORY_INFO
   CHECKSUM equ -(MAGIC + FLAGS)
 ;  EXTERN code, end
+
+section .bootstrap_stack, nobits
+align 4
+stack_bottom:
+resb 16384
+stack_top:
 
 section .text
 align 4
@@ -27,17 +29,25 @@ multibootheader:
 ;  dd end
 ;  dd start
 
-
+global start
 start:
-  mov esp, 0x200000
+  mov esp, stack_top
   push eax
   push ebx
+  extern init_ctors
   call init_ctors
+  extern kernel_main
   call kernel_main
+  cli
+ 
+.hang:
+  hlt
+  jmp .hang
 
 stublet:
   jmp $
 
+global gdt_flush
 gdt_flush:
   mov ax, 0x10
   mov ds, ax
