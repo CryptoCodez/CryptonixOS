@@ -6,6 +6,9 @@
 
 #include "types.hpp"
 
+using typ::uint32_t;
+using typ::uint16_t;
+
 enum { multiboot_magic =  0x2badb002 };
 
 struct multiboot_header {

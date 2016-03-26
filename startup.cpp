@@ -28,7 +28,7 @@ struct object {
   void *p;
   void *d; 
 } object[ 32 ] = {};
-uint32_t iObject { 0 };
+typ::uint32_t iObject { 0 };
 
 int __cxa_atexit( void ( *f )( void* ), void *p, void *d ) {
   if( iObject >= 32 ) return -1;
@@ -40,7 +40,7 @@ int __cxa_atexit( void ( *f )( void* ), void *p, void *d ) {
 }
 
 void __cxa_finalize( void *d ) {
-  uint32_t i { iObject };
+  typ::uint32_t i { iObject };
   for( ; i > 0; --i ) {
     --iObject;
     object[ iObject].f( object[ iObject ].p );

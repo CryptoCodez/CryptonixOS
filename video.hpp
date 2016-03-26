@@ -41,14 +41,15 @@ public:
   void clear();
   video& operator <<( const char* s );
   video& operator <<( const color_t& color );
+  video& operator <<( typ::size_t size );
   void put( char c );
   void endl() { m_pos = 0; m_off++; }
 
 private:
-  uint16_t* m_videomem;
-  uint32_t m_off; // cursor y-pos
-  uint32_t m_pos; // x-pos
-  uint16_t m_color;
+  typ::uint16_t* m_videomem;
+  typ::uint32_t m_off; // cursor y-pos
+  typ::uint32_t m_pos; // x-pos
+  typ::uint16_t m_color;
 };
 
 extern video screen;

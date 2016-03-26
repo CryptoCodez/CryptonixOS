@@ -21,16 +21,16 @@ enum gdt_flags {
 };
 
 const int GDT_ENTRIES { 5 };
-static uint64_t gdta[ GDT_ENTRIES ];
+static typ::uint64_t gdta[ GDT_ENTRIES ];
 
 struct gdt_ptr_{
-  uint16_t limit;
+  typ::uint16_t limit;
   void* ptr;
-  gdt_ptr_( uint64_t* p ) : limit( GDT_ENTRIES * 8 - 1 ), ptr( p ) {};
+  gdt_ptr_( typ::uint64_t* p ) : limit( GDT_ENTRIES * 8 - 1 ), ptr( p ) {};
 } PACKED;
 using gdt_ptr = struct gdt_ptr_;
 
-static void set_entry( int i, uint32_t base, uint32_t limit, int flags ) {
+static void set_entry( int i, typ::uint32_t base, typ::uint32_t limit, int flags ) {
   gdta[ i ] = ( limit & 0xffffLL );
   gdta[ i ] |= ( base & 0xffffffLL ) << 16;
   gdta[ i ] |= ( flags & 0xffLL ) << 40;

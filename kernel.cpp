@@ -1,13 +1,14 @@
 // Coyright (c) Marc Puttkammer
 // 
 
+#include "memory.hpp"
 #include "video.hpp"
 #include "multiboot.hpp"
 #include "gdt.hpp"
 
-extern "C" void kernel_main( const multiboot& multiboot_structure, uint32_t mboot_magic );
+extern "C" void kernel_main( const multiboot& multiboot_structure, typ::uint32_t mboot_magic );
 
-void kernel_main( const multiboot& /*multiboot_structure*/, uint32_t mboot_magic ) {
+void kernel_main( const multiboot& /*multiboot_structure*/, typ::uint32_t mboot_magic ) {
   if( multiboot_magic != mboot_magic ) {
     screen << color_t( color::red, color::white )
       << "Error: No Multiboot Bootloader Found ( Err_NMBF )";
@@ -18,7 +19,7 @@ void kernel_main( const multiboot& /*multiboot_structure*/, uint32_t mboot_magic
   screen << "Welcome OSDeveloper";
   screen.endl();  
   gdt::init_gdt();
-  screen << "gdt works";
+  screen << "gdt works " << sizeof( typ::uint32_t ) << " " << sizeof( typ::uint8_t );
   return;
 }
 
