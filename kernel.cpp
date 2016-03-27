@@ -19,6 +19,8 @@ void kernel_main( const multiboot& /*multiboot_structure*/, typ::uint32_t mboot_
   screen << "Welcome OSDeveloper";
   screen.endl();  
   gdt::init_gdt();
+  typ::size_t a = 27;
+  screen << a;
   return;
 }
 

@@ -32,23 +32,24 @@ video& video::operator <<( const color_t& color ) {
 
 video& video::operator <<( typ::size_t size ) {
   int tmp { 0 };
-  //while( size >= 10 ) {
-    //tmp = size % 10;
-    //size = size / 10;
-    //switch( tmp ) {
-    //case 0: put( '0' ); break;
-    //case 1: put( '1' ); break;
-    //case 2: put( '2' ); break;
-    //case 3: put( '3' ); break;
-    //case 4: put( '4' ); break;
-    //case 5: put( '5' ); break;
-    //case 6: put( '6' ); break;
-    //case 7: put( '7' ); break;
-    //case 8: put( '8' ); break;
-    //case 9: put( '9' ); break;
-    //default: break;
-    //}
-  //}
+  while( size >= 10 ) {
+    tmp = size % 10;
+    size = ( size - tmp ) / 10;
+    switch( tmp ) {
+    case 0: put( '0' ); break;
+    case 1: put( '1' ); break;
+    case 2: put( '2' ); break;
+    case 3: put( '3' ); break;
+    case 4: put( '4' ); break;
+    case 5: put( '5' ); break;
+    case 6: put( '6' ); break;
+    case 7: put( '7' ); break;
+    case 8: put( '8' ); break;
+    case 9: put( '9' ); break;
+    default: break;
+    }
+  }
+
   return *this;
 }
 

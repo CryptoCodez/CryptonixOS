@@ -23,7 +23,7 @@ using cint16_t = const short;
 using cint32_t = const int;
 using cint64_t = const long long;
 
-using size_t = long long int;
+using size_t = long int;
 
 } // namespace typ
 

@@ -9,18 +9,21 @@ CC = gcc
 CXX = g++
 LD = ld
 
+DEFAULT_FLAGS?= -m32 -O2 -ggdb -Wall -Wextra -nostdinc -pedantic-errors -static-libgcc -lgcc -lsupc++
+DEFAULT_FLAGS:=$(DEFAULT_FLAGS) -fno-builtin -fno-rtti -fno-exceptions -fno-leading-underscore -fno-stack-protector -fno-use-cxa-atexit -ffreestanding
+
 ASFLAGS = -f elf
-CFLAGS = -m32 -fno-use-cxa-atexit -nostdlib -fno-builtin -fno-rtti -fno-exceptions -fno-leading-underscore -Wall -Wextra -pedantic-errors -ggdb -fno-stack-protector -nostdinc -std=c11 -lgcc
-CXXFLAGS = -m32 -fno-use-cxa-atexit -nostdlib -fno-builtin -fno-rtti -fno-exceptions -fno-leading-underscore -Wall -Wextra -pedantic-errors -ggdb -fno-stack-protector -nostdinc -std=c++11 -lgcc
+CFLAGS = -std=c11
+CXXFLAGS = -std=c++11
 LDFLAGS = -melf_i386 -Tkernel.ld
 kernel: $(OBJS)
 	$(LD) $(LDFLAGS) -o $@ $^
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c -o $@ $^
+	$(CC) $(DEFAULT_FLAGS) $(CFLAGS) -c -o $@ $^
 
 %.o: %.cpp
-	$(CXX) $(CXXFLAGS) -c -o $@ $^
+	$(CXX) $(DEFAULT_FLAGS) $(CXXFLAGS) -c -o $@ $^
 
 %.o: %.S
 	$(CC) -m32 -c -o $@ $^
