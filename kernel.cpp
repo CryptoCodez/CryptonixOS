@@ -1,10 +1,11 @@
 // Coyright (c) Marc Puttkammer
 // 
 
-#include "multiboot.hpp"
-#include "gdt.hpp"
-#include "memory.hpp"
-#include "video.hpp"
+#include "sys/os.hpp"
+#include "sys/multiboot.hpp"
+#include "sys/gdt.hpp"
+#include "sys/memory.hpp"
+#include "sys/video.hpp"
 
 extern "C" void kernel_main( const multiboot& multiboot_structure, typ::uint32_t mboot_magic );
 
