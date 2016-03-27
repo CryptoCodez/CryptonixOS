@@ -19,5 +19,5 @@
 * ld,
 * nasm,
 * gcc/ g++,
-* uxterm ( or edit the boot scripts )
+* xfce4-terminal ( or edit the boot scripts )
 * vim ( recommended ;) )
